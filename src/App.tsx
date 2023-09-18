@@ -1,25 +1,37 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { RecoilRoot } from "recoil";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import Dashboard from "./pages/dashboard/Dashboard";
+import Main from "./pages/main/Main";
+import Setting from "./pages/setting/Setting";
+import Log from "./pages/log/Log";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Main></Main>,
+    children: [
+      {
+        path: "dashboard",
+        element: <Dashboard />,
+      },
+      {
+        path: "setting",
+        element: <Setting />,
+      },
+      {
+        path: "log",
+        element: <Log />,
+      },
+    ],
+  },
+]);
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <RecoilRoot>
+      <RouterProvider router={router}></RouterProvider>
+    </RecoilRoot>
   );
 }
 
