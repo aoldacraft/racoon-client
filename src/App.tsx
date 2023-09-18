@@ -18,6 +18,10 @@ const router = createBrowserRouter([
       {
         path: "setting",
         element: <Setting />,
+        children: [
+          { path: "user", element: <></> },
+          { path: "server", element: <></> },
+        ],
       },
       {
         path: "log",
