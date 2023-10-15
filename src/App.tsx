@@ -2,17 +2,22 @@ import React from "react";
 import { RecoilRoot } from "recoil";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Dashboard from "./pages/dashboard/Dashboard";
-import Main from "./pages/main/Main";
 import Setting from "./pages/setting/Setting";
 import Log from "./pages/log/Log";
+import Layout from "./pages/layout/Layout";
+import Main from "./pages/main/Main";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Main></Main>,
+    element: <Layout></Layout>,
     children: [
       {
-        path: "dashboard",
+        path: "/",
+        element: <Main />,
+      },
+      {
+        path: "/dashboard/:service",
         element: <Dashboard />,
       },
       {
