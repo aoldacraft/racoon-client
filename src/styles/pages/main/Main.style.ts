@@ -23,23 +23,15 @@ export const PageTitle = styled.h1`
 //   padding: 40px 20px;
 // `;
 
-export const ServiceCard = styled.div`
-  background-color: #ffffff;
-  border-radius: 10px;
-  width: 300px;
-  height: 200px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-  padding: 20px;
-`;
-
-export const ContentContainer = styled.div``;
-
-export const ContentTitle = styled.span`
-  font-size: 20px;
-  font-weight: bold;
-  margin-right: 5px;
-`;
-
-export const Content = styled.span`
-  font-size: 20px;
+export const ServiceContainer = styled.div`
+  display: grid;
+  grid-gap: 10px;
+  grid-template-rows: auto;
+  grid-template-columns: repeat(1, 1fr);
+  @media only screen and (min-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media only screen and (min-width: 1024px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
 `;

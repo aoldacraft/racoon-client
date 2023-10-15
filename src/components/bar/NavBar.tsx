@@ -27,7 +27,7 @@ const NavBarContainer = styled.header`
   align-items: center;
   position: fixed;
   top: 0;
-  left: 304;
+  left: 250;
   background-color: white;
   padding: 12px 32px;
   /* top: 0;
@@ -37,7 +37,7 @@ const NavBarContainer = styled.header`
 `;
 
 const CommandLine = styled.input`
-  width: 1000px;
+  width: 85%;
   padding: 12px 20px;
   border: 1px solid #919eab;
   border-radius: 6px;

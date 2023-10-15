@@ -13,7 +13,7 @@ const Layout = () => {
         width: "100%",
         height: "2868px",
         paddingTop: "66px",
-        paddingLeft: "304px",
+        paddingLeft: "250px",
       }}
     >
       <SideBar />

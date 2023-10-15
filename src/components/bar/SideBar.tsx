@@ -41,7 +41,7 @@ const SideBar = () => {
 export default SideBar;
 
 const SideBarContainer = styled.aside`
-  width: 304px;
+  width: 250px;
   height: 2868px;
   background-color: #212b36;
   padding: 24px;
