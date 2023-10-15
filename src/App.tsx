@@ -17,6 +17,10 @@ const router = createBrowserRouter([
         element: <Main />,
       },
       {
+        path: "/dashboard/:service",
+        element: <Dashboard />,
+      },
+      {
         path: "setting",
         element: <Setting />,
         children: [

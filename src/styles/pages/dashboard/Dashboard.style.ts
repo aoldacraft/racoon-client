@@ -22,3 +22,10 @@ export const ContentContainer = styled.main`
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   padding: 40px 20px;
 `;
+
+export const GameContainer = styled.div`
+  display: grid;
+  grid-gap: 10px;
+  grid-template-rows: auto;
+  grid-template-columns: repeat(3, 1fr);
+`;
