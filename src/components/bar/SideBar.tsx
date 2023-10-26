@@ -9,7 +9,7 @@ const SideBar = () => {
         <NavTitle>Dashboard</NavTitle>
         <NavList>
           <NavItem>
-            <Link to="/dashboard">- Home</Link>
+            <Link to="/">- Home</Link>
           </NavItem>
         </NavList>
       </NavArea>

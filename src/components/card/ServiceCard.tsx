@@ -12,7 +12,7 @@ const ServiceCard = ({ service, server_quantity, total_player }: IService) => {
           <S.Content>{service}</S.Content>
         </S.ContentContainer>
         <S.ContentContainer>
-          <S.ContentTitle>Live Serve :</S.ContentTitle>
+          <S.ContentTitle>Live Server :</S.ContentTitle>
           <S.Content>{server_quantity}</S.Content>
         </S.ContentContainer>
         <S.ContentContainer>
