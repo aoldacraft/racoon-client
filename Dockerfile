@@ -20,7 +20,7 @@ COPY . .
 RUN npm run build
 
 # prod environment
-FROM nginx:stable-alpine
+FROM docker.io/library/nginx:stable-alpine
 
 ENV APP_ENDPOINT "127.0.0.1:8000"
 
