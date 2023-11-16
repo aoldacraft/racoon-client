@@ -1,5 +1,5 @@
 export interface IService {
-  service: string;
+  service_name: string;
   server_quantity: number;
   total_player: number;
 }

@@ -6,6 +6,8 @@ import Setting from "./pages/setting/Setting";
 import Log from "./pages/log/Log";
 import Layout from "./pages/layout/Layout";
 import Main from "./pages/main/Main";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 
 const router = createBrowserRouter([
   {
@@ -17,7 +19,7 @@ const router = createBrowserRouter([
         element: <Main />,
       },
       {
-        path: "/dashboard/:service",
+        path: "/dashboard/:serviceName",
         element: <Dashboard />,
       },
       {
@@ -37,10 +39,15 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
+  const queryClient = new QueryClient();
+
   return (
-    <RecoilRoot>
-      <RouterProvider router={router}></RouterProvider>
-    </RecoilRoot>
+    <QueryClientProvider client={queryClient}>
+      <RecoilRoot>
+        <RouterProvider router={router}></RouterProvider>
+      </RecoilRoot>
+      <ReactQueryDevtools />
+    </QueryClientProvider>
   );
 }
 
