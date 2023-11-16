@@ -1,7 +1,8 @@
 export interface IGame {
   uuid: string;
-  server: string;
-  player: number;
-  state: string;
-  time: number;
+  service_name: string;
+  server_ip: string;
+  player_quantity: number;
+  game_state: string;
+  state_time: number;
 }
