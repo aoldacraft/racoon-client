@@ -6,32 +6,25 @@ import {
   PageHeaderWrapper,
   PageTitle,
 } from "../../styles/pages/dashboard/Dashboard.style";
-import LogTable from "../../components/table/LogTable";
+import { useQuery } from "@tanstack/react-query";
 
 const Log = () => {
-  const [logs, setLogs] = useState<ILog[]>([]);
-
-  const getLogs = async () => {
-    const data = await instance.get(
+  const getLogs = async (): Promise<ILog[]> => {
+    const res = await instance.get(
       `/game/e29d7073-ab93-430d-854f-89e3d16e0087/log`
     );
-    console.log(data);
-    console.log("hi");
-    setLogs(data.data);
+    return res.data;
   };
 
-  // const { data } = useQuery(["allServices"], getAllServices);
+  const { data: logs } = useQuery({ queryKey: ["logs"], queryFn: getLogs });
 
-  useEffect(() => {
-    getLogs();
-  }, []);
   return (
     <>
       <PageHeaderWrapper>
         <PageTitle>Log Page</PageTitle>
       </PageHeaderWrapper>
       <LogListContainer>
-        {logs.map((log) => (
+        {logs?.map((log) => (
           <LogContainer>
             <LogData>[{log.log_time}] </LogData>
             <LogData>[{log.service_name}] </LogData>
