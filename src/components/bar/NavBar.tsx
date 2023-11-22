@@ -37,7 +37,7 @@ const NavBarContainer = styled.header`
 `;
 
 const CommandLine = styled.input`
-  width: 85%;
+  width: 80%;
   padding: 12px 20px;
   border: 1px solid #919eab;
   border-radius: 6px;
