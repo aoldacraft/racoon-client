@@ -6,15 +6,15 @@ const SideBar = () => {
   return (
     <SideBarContainer>
       <NavArea>
-        <NavTitle>Dashboard</NavTitle>
+        <NavTitle>Main</NavTitle>
         <NavList>
           <NavItem>
-            <Link to="/">- Home</Link>
+            <Link to="/">- Services</Link>
           </NavItem>
         </NavList>
       </NavArea>
 
-      <NavArea>
+      {/* <NavArea>
         <NavTitle>Settings</NavTitle>
         <NavList>
           <NavItem>
@@ -24,7 +24,7 @@ const SideBar = () => {
             <Link to="/setting/server">- Server</Link>
           </NavItem>
         </NavList>
-      </NavArea>
+      </NavArea> */}
 
       <NavArea>
         <NavTitle>Log</NavTitle>
