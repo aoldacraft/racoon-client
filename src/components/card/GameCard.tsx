@@ -6,7 +6,7 @@ const GameCard = ({ game }: { game: IGame }) => {
   return (
     <S.GameCard>
       <S.ContentContainer>
-        <S.ContentTitle>Server : </S.ContentTitle>
+        <S.ContentTitle>Server IP : </S.ContentTitle>
         <S.Content>{game.server_ip}</S.Content>
       </S.ContentContainer>
       <S.ContentContainer>

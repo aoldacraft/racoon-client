@@ -10,32 +10,27 @@ import { Content, ContentTitle, ContentWrapper } from "../../styles/util";
 import instance from "../../api/util/instance";
 import { IService } from "../../interface/ServiceInterface";
 import { IGame } from "../../interface/GameInterface";
+import { useQuery } from "@tanstack/react-query";
 
 const Dashboard = () => {
   const { serviceName } = useParams();
 
-  const [service, setService] = useState<IService>();
-  const [games, setGames] = useState<IGame[]>([]);
-  const getAllServices = async () => {
-    const data = await instance.get(`/service/${serviceName}`);
-    console.log(data);
-    console.log("hi");
-    setService(data.data);
+  const getServiceInfo = async (): Promise<IService> => {
+    const res = await instance.get(`/service/${serviceName}`);
+    return res.data;
   };
 
-  const getGames = async () => {
-    const data = await instance.get(`/service/${serviceName}/game`);
-
-    console.log(data);
-    setGames(data.data);
+  const getGames = async (): Promise<IGame[]> => {
+    const res = await instance.get(`/service/${serviceName}/game`);
+    return res.data;
   };
 
-  // const { data } = useQuery(["allServices"], getAllServices);
+  const { data: service } = useQuery({
+    queryKey: [`${serviceName}`],
+    queryFn: getServiceInfo,
+  });
 
-  useEffect(() => {
-    getAllServices();
-    getGames();
-  }, []);
+  const { data: games } = useQuery({ queryKey: ["games"], queryFn: getGames });
 
   console.log(service);
   return (
@@ -58,8 +53,8 @@ const Dashboard = () => {
         </ContentWrapper>
       </S.ServiceContainer>
       <S.GameContainer>
-        {games.map((game) => (
-          <GameCard game={game} />
+        {games?.map((game) => (
+          <GameCard game={game} key={game.uuid} />
         ))}
       </S.GameContainer>
     </>
